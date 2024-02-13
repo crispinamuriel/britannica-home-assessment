@@ -11,7 +11,7 @@ interface ProfileProps {
 const ProfileComponent: React.FC<ProfileProps> = ({ profile }) => {
   const [likes, setLikes] = useState(0)
   return (
-    <div className="flex flex-col max-w-sm w-1/2 lg:max-w-full lg:flex mb-10 max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-70 hover:bg-slate-950">
+    <div className="flex flex-col max-w-sm w-1/2 min-w-full md:min-w-1/2 lg:max-w-full lg:flex mb-10 max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-70 hover:bg-slate-950">
       <Link href={`/${profile.id}`}>
         <h2 className="hover:text-sky-400 mb-1">View Full Profile</h2>
         <div>

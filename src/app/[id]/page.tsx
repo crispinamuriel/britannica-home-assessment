@@ -24,7 +24,7 @@ export default async function ProfileShowPage(props: DynamicRouteProps) {
   }
 
   return (
-    <div className="flex flex-row max-w-sm w-full lg:max-w-full lg:flex m-10 max-w-lg p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-70 hover:bg-slate-950">
+    <div className="flex flex-col max-w-sm w-full lg:flex m-10 max-w-lg min-w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-70 hover:bg-slate-950 lg:flex-row">
       <div className="flex row">
         <div>
           <img className="w-80" src={`https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png`} alt="Profile Picture" />

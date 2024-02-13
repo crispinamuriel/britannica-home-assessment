@@ -11,7 +11,7 @@ export default async function Profiles() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-24">
+    <div className="flex min-h-screen flex-col items-center p-24 min-w-400">
 
       {profiles.map(profile => (
         <ProfileComponent key={profile.id} profile={profile} />
