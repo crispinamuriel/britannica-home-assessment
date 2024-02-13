@@ -19,7 +19,7 @@ export default async function ProfileShowPage(props: DynamicRouteProps) {
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const profile: Profile = await response.json();
 
-  if (!profile) {
+  if (!response.ok) {
     return notFound();
   }
 
