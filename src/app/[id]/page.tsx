@@ -1,7 +1,11 @@
 import { Profile } from '../../pages/types/Profile';
 import Link from 'next/link';
 
-export default async function ProfileShowPage(props: any) {
+interface DynamicRouteProps {
+  params: { id: number }
+}
+
+export default async function ProfileShowPage(props: DynamicRouteProps) {
 
   async function createLike(id: number) {
     // Server action
