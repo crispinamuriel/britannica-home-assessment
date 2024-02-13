@@ -30,18 +30,18 @@ export default async function ProfileShowPage(props: any) {
           {likes}
         </button> */}
         <a href={profile.email}>
-          <p className="mt-2 text-gray-500 hover:text-sky-400">{profile.email}</p>
+          <p className="mt-2 text-gray-300 hover:text-sky-400">{profile.email}</p>
         </a>
-        <p className="mt-2 text-gray-500">{profile.phone}</p>
+        <p className="mt-2 text-gray-300">{profile.phone}</p>
         <Link href={`https://${profile.website}`}><p className="mt-2 text-blue-500 hover:text-sky-400">{profile.website}</p></Link>
         <div className="mt-4">
-          <p className="text-gray-400">{profile.address.street}, {profile.address.suite}</p>
-          <p className="text-gray-400">{profile.address.city}, {profile.address.zipcode}</p>
+          <p className="text-gray-300">{profile.address.street}, {profile.address.suite}</p>
+          <p className="text-gray-300">{profile.address.city}, {profile.address.zipcode}</p>
         </div>
         <div className="mt-4">
-          <p className="text-gray-400">Company: {profile.company.name}</p>
-          <p className="text-gray-400">Catch Phrase: {profile.company.catchPhrase}</p>
-          <p className="text-gray-400">BS: {profile.company.bs}</p>
+          <p className="text-gray-300">Company: {profile.company.name}</p>
+          <p className="text-gray-300">Catch Phrase: {profile.company.catchPhrase}</p>
+          <p className="text-gray-300">BS: {profile.company.bs}</p>
         </div>
       </div>
     </div>
