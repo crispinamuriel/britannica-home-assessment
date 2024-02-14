@@ -31,7 +31,8 @@ export default function likesHandler(
     // Increment the like count for the profile
     profile.likes++;
 
-    res.status(200).json({ likes: profile.likes });
+    // Upon success send back the profile.id and the profile.like count
+    res.status(200).json({ id: profile.id, likes: profile.likes });
   } else {
     res.status(405).json({ error: 'Method Not Allowed' });
   }
