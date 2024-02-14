@@ -29,10 +29,10 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the list of Mock profiles.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the list of Mock profiles. You can click into each profile to navigate into a single profile to see the dynamic routing. 
 
-You can click into each profile to navigate into a single profile to see the dynamic routing. 
+### Assumptions 
 
-### Asumptions 
+The assumptions were to use a Mock API instead of a database to create user profiles, The mock API that was used that can be found here: https://jsonplaceholder.typicode.com/users. 
 
-The assumptions were to use a Mock API instead of a database to create user profiles, A mock API was used that can be found here https://jsonplaceholder.typicode.com/users
+A Server Action was created to listen for profile likes sent in a POST to http://localhost:3000/api/likeProfile/${id}. It was assumed that the only functionality was to be able to handle and accoutn for a single like on the specific profile with the dynamic profile ID.
