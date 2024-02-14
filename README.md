@@ -26,6 +26,7 @@ Download this git repository, cd into the repository.
 Run the development server:
 
 ```bash
+npm i
 npm run dev
 ```
 
