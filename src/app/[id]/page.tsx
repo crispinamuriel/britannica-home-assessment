@@ -13,17 +13,15 @@ export default async function ProfileShowPage(props: DynamicRouteProps) {
   // Server action
   async function addLike() {
     'use server';
-    console.log(`Added like to user with id: ${id}.`);
-
-
     try {
-      const response = await fetch(`/pages/api/likeProfile/${id}`, {
+      const response = await fetch(`http://localhost:3000/api/likeProfile/${id}`, {
         method: 'POST'
       });
 
       if (response.ok) {
+        console.log(`Added like to user with id: ${id}.`);
         const data = await response.json();
-        // setLikes(data.likes);
+        console.log(data)
       } else {
         console.error('Failed to like profile:', response.statusText);
       }
