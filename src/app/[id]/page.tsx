@@ -7,14 +7,35 @@ interface DynamicRouteProps {
 }
 
 export default async function ProfileShowPage(props: DynamicRouteProps) {
-
-  async function createLike(id: number) {
-    // Server action
+  const id = props.params.id;
+  // Server action
+  async function addLike() {
     'use server';
+    console.log(`Added like to user with id: ${id}.`);
 
+    // creating a backend API instead of using a Mock API, 
+    // put logic here to POST a new like here:
+
+    /* 
+    try {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(id),
+      });
+
+      if (response.ok) {
+        console.log('User Profile Like successful!');
+      } else {
+        console.error('Failed to post like:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }*/
   }
 
-  const id = props.params.id;
 
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
   const profile: Profile = await response.json();
@@ -30,14 +51,15 @@ export default async function ProfileShowPage(props: DynamicRouteProps) {
           <img className="w-80" src={`https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png`} alt="Profile Picture" />
         </div>
       </div>
-      <div className="p-8">
-        <div className="uppercase text-2xl tracking-wide text-sm text-indigo-500 font-semibold">{profile.name}</div>
-        {/* <button className="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={() => setLikes((likes) => likes + 1)}>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 mr-1">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
-          </svg> Likes:{' '}
-          {likes}
-        </button> */}
+      <div className="pl-8">
+        <div className="uppercase text-3xl tracking-wide text-sm text-indigo-500 font-semibold">{profile.name}</div>
+        <form action={addLike}>
+          <button className="flex bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6 mr-1">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6.633 10.25c.806 0 1.533-.446 2.031-1.08a9.041 9.041 0 0 1 2.861-2.4c.723-.384 1.35-.956 1.653-1.715a4.498 4.498 0 0 0 .322-1.672V2.75a.75.75 0 0 1 .75-.75 2.25 2.25 0 0 1 2.25 2.25c0 1.152-.26 2.243-.723 3.218-.266.558.107 1.282.725 1.282m0 0h3.126c1.026 0 1.945.694 2.054 1.715.045.422.068.85.068 1.285a11.95 11.95 0 0 1-2.649 7.521c-.388.482-.987.729-1.605.729H13.48c-.483 0-.964-.078-1.423-.23l-3.114-1.04a4.501 4.501 0 0 0-1.423-.23H5.904m10.598-9.75H14.25M5.904 18.5c.083.205.173.405.27.602.197.4-.078.898-.523.898h-.908c-.889 0-1.713-.518-1.972-1.368a12 12 0 0 1-.521-3.507c0-1.553.295-3.036.831-4.398C3.387 9.953 4.167 9.5 5 9.5h1.053c.472 0 .745.556.5.96a8.958 8.958 0 0 0-1.302 4.665c0 1.194.232 2.333.654 3.375Z" />
+            </svg>
+          </button>
+        </form>
         <a href={profile.email}>
           <p className="mt-2 text-gray-300 hover:text-sky-400">{profile.email}</p>
         </a>
