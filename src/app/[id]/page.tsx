@@ -2,39 +2,35 @@ import { Profile } from '../../pages/types/Profile';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+
 interface DynamicRouteProps {
   params: { id: number }
 }
 
 export default async function ProfileShowPage(props: DynamicRouteProps) {
   const id = props.params.id;
+
   // Server action
   async function addLike() {
     'use server';
     console.log(`Added like to user with id: ${id}.`);
 
-    // creating a backend API instead of using a Mock API, 
-    // put logic here to POST a new like here:
 
-    /* 
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(id),
+      const response = await fetch(`/pages/api/likeProfile/${id}`, {
+        method: 'POST'
       });
 
       if (response.ok) {
-        console.log('User Profile Like successful!');
+        const data = await response.json();
+        // setLikes(data.likes);
       } else {
-        console.error('Failed to post like:', response.statusText);
+        console.error('Failed to like profile:', response.statusText);
       }
     } catch (error) {
-      console.error('Error posting data:', error);
-    }*/
-  }
+      console.error('Error:', error);
+    }
+  };
 
 
   const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
