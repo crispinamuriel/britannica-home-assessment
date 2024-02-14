@@ -30,7 +30,7 @@ npm i
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the list of Mock profiles. You can click into each profile to navigate into a single profile to see the dynamic routing. 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the list of Mock profiles. You can click into each profile to navigate into a single profile to see the dynamic routing. For example, [http://localhost:3000/1](http://localhost:3000/1) to display the profile with the id of 1.
 
 ### Assumptions 
 
