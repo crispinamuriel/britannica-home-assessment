@@ -35,4 +35,4 @@ You can click into each profile to navigate into a single profile to see the dyn
 
 ### Asumptions 
 
-The assumptions were to use a Mock API instead of a database to create user profiles, I used mock API https://jsonplaceholder.typicode.com/users
+The assumptions were to use a Mock API instead of a database to create user profiles, A mock API was used that can be found here https://jsonplaceholder.typicode.com/users
