@@ -32,3 +32,7 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the list of Mock profiles.
 
 You can click into each profile to navigate into a single profile to see the dynamic routing. 
+
+### Asumptions 
+
+The assumptions were to use a Mock API instead of a database to create user profiles, I used mock API https://jsonplaceholder.typicode.com/users
