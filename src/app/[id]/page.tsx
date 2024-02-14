@@ -1,4 +1,4 @@
-import { Profile } from '../../pages/types/Profile';
+import { Profile } from "../types/Profile";
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
