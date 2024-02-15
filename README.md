@@ -36,4 +36,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 The assumptions were to use a Mock API instead of a database to create user profiles, The mock API that was used that can be found here: https://jsonplaceholder.typicode.com/users. 
 
-A Server Action was created to listen for profile likes sent in a POST to http://localhost:3000/api/likeProfile/${id}. It was assumed that the only functionality was to be able to handle a single like on the specific profile with the dynamic profile ID.
+A Server Action was created along with an API to listen for profile likes sent in a POST to http://localhost:3000/api/likeProfile/${id}. It was assumed that the only functionality was to be able to handle a single like on the specific profile with the dynamic profile ID.
