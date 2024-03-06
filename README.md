@@ -1,4 +1,4 @@
-# Britannica Home Fashions Assessment
+# Next.js mock profiles app
 
 **Objective:** To create a simplified web application using Next.js that demonstrates fundamental
 capabilities with server-side features and client-side interactivity.
